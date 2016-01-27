@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/style.css">
+        <!--<script data-main="dist/js/main_built" src="js/bower_components/requirejs/require.min.js"></script>-->
+
+        <!-- build:js scripts/site.js -->
+        <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body class="contentwrap" ng-click="onClick()">
+        <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="loader" ng-if="!initialized">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="layout" ng-if="initialized" ui-view autoscroll="false"></div>
+
+
+    </body>
+</html>

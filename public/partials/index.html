@@ -1,0 +1,22 @@
+<div>
+    <div id="dialog" key-press="proceed" which-key="13">
+        <ul><li class="line" ng-repeat="line in lines track by $index" attractive>{{line}}</li></ul>
+    </div>
+    <div ng-if="ended" attractive>
+        <h1>GAME OVER</h1>
+    </div>
+
+    <div id="control-panel">
+        <div id="interaction" ng-if="showInteraction" attractive>
+            <ul ng-if="type == 'options'">
+                <li ng-repeat="option in options">
+                    <a href ng-click="next($index);$event.stopPropagation()">{{option}}</a>
+                </li>
+            </ul>
+            <div ng-if="type == 'input'">
+                <input ng-model="data">
+                <button ng-click="next(data);$event.stopPropagation()">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
